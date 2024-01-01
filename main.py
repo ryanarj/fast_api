@@ -1,5 +1,6 @@
+import json
 from enum import Enum
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
 app = FastAPI()
@@ -58,7 +59,21 @@ def index():
     return {"players": players}
 
 
-@app.get('/player/{player_id}')
-def query_player_id(player_id):
+@app.get('/players/{player_id}')
+def query_player_id(player_id: int):
+    if not players.get(player_id):
+        raise HTTPException(
+            status_code=404
+        )
     return players.get(player_id)
 
+
+@app.post('/add_players')
+def query_player_id(player: Player):
+    print('Test')
+    if player.id in players:
+        raise HTTPException(
+            status_code=400
+        )
+    players[player.id] = player
+    return {"players": players}
