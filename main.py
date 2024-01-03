@@ -1,9 +1,30 @@
 from enum import Enum
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-import psycopg2_binary
+import psycopg2
+from config import config
 
 app = FastAPI()
+
+
+def connect():
+    connection = None
+    try:
+        params = config()
+        print("Connecting to pg")
+        connection = psycopg2.connect(**params)
+
+        crsr = connection.cursor()
+        print("PostgresSQL database version: ")
+        crsr.execute("SELECT version()")
+        db_version = crsr.fetchone()
+        print(db_version)
+        crsr.close()
+    except (Exception, psycopg2.DatabaseError) as err:
+        print(err)
+    finally:
+        if connection is not None:
+            connection.close()
 
 
 class Category(Enum):
@@ -55,3 +76,7 @@ def query_player_id(player: Player):
         raise HTTPException(status_code=400)
     players[player.id] = player
     return {"players": players}
+
+
+if __name__ == "__main__":
+    connect()
