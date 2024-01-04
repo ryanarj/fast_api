@@ -1,6 +1,6 @@
 FROM python:3.9
 
-ADD main.py .
+ADD api/core/FastApiService.py .
 
 COPY requirements.txt /tmp/
 RUN pip install --requirement /tmp/requirements.txt
