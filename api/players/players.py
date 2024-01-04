@@ -25,7 +25,7 @@ def query_player_id(player_id: int):
 
 
 @app.post("/add_players")
-def query_player_id(player: Player):
+def add_player(player: Player):
     if player.id in players:
         raise HTTPException(status_code=400)
     players[player.id] = player
