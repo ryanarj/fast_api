@@ -1,6 +1,6 @@
 from fastapi import HTTPException
 
-from api.core.FastApiService import FastApiService
+from services.core.FastApiService import FastApiService
 from schema.models import Player
 
 players = {

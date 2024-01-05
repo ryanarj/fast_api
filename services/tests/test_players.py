@@ -1,4 +1,4 @@
-from api.players.players import add_player
+from services.players.players import add_player
 from schema.models import Player
 
 
