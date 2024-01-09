@@ -1,3 +1,5 @@
-from services.core.FastApiService import FastApiService
+from routers.core.FastApiService import FastApiService
+from routers.players import players
 
-app = FastApiService()
+app = FastApiService().app()
+app.include_router(players.router)

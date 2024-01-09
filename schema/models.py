@@ -1,19 +1,18 @@
 from pydantic import BaseModel
 
 
-class Player(BaseModel):
-    id: int
+class PlayerBase(BaseModel):
     name: str
     number: int
     position: str
     team: str
 
 
-class Staff(BaseModel):
+class StaffBase(BaseModel):
     name: str
     role: str
 
 
-class Team(BaseModel):
+class TeamBase(BaseModel):
     name: str
     city: str

@@ -1,6 +1,11 @@
 import psycopg2
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 from config import config
+
+engine = create_engine("postgresql+psycopg2://postgres:1234@localhost/fast_api")
+Session = sessionmaker(bind=engine)
 
 
 def connect():
@@ -18,3 +23,11 @@ def connect():
     finally:
         if connection is not None:
             connection.close()
+
+
+def get_db():
+    db = Session()
+    try:
+        yield db
+    finally:
+        db.close()

@@ -9,11 +9,15 @@ NBA players Fast API Testings
   - Pyway
   - uvicorn
 
+Local setup:
+1. Create a virtual env
+2. `pip install -r requirements.txt`
+3. Install postgres
+
 Run locally:
 - `uvicorn main:app --reload`
 
-Run migrations 
+Run migrations
 doc: https://pypi.org/project/pyway/
 - `pyway validate`
 - `pyway migrate`
-  

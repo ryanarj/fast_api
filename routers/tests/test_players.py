@@ -1,9 +1,9 @@
-from services.players.players import add_player
-from schema.models import Player
+from routers.players.players import add_player
+from schema.models import PlayerBase
 
 
 def test_query_player_id():
-    player = Player(id=12, name="<NAME>", number=12, position="player", team="test")
+    player = PlayerBase(name="<NAME>", number=12, position="player", team="test")
     players = add_player(player)
     players = players["players"]
     test_player = players.get(player.id)
