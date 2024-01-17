@@ -1,7 +1,5 @@
 from uuid import UUID
 
-from fastapi import Depends
-
 from db.connect import Session, get_db
 from schema.tables import Player
 

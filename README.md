@@ -2,12 +2,19 @@ NBA players Fast API Testings
 
 - Technologies used:
   - Docker
+    - For containerization
   - Fast API
+    - For backend API infrastructure
   - Tox
+    - For testing dynamically
   - SQL Alchemy
+    - Query layer for data
   - POSTGRES
+    - Relational DB for data
   - Pyway
+    - For the migration of those data tables
   - uvicorn
+    - To spin up a server locally
 
 Local setup:
 1. Create a virtual env
