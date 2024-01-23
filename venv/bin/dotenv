@@ -1,4 +1,4 @@
-#!/Users/ryanarj/Documents/fast_api/venv/bin/python
+#!/Users/ryana/Projects/fast_api/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

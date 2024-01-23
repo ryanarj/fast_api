@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #!/Users/ryanarj/Documents/fast_api/venv/bin/python
+=======
+#!/Users/ryana/Projects/fast_api/venv/bin/python
+>>>>>>> 0ae9d0f731f7ae2c15124f3290f7dae46edd7e26
 # -*- coding: utf-8 -*-
 import re
 import sys
