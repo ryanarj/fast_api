@@ -8,6 +8,10 @@ class PlayerBase(BaseModel):
     team: str
 
 
+class PlayerPromptBase(BaseModel):
+    prompt: str
+
+
 class StaffBase(BaseModel):
     name: str
     role: str
